@@ -1,0 +1,6 @@
+ubuntu@ip-172-31-42-54:/$ ansible localhost -m ping
+[WARNING]: No inventory was parsed, only implicit localhost is available
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
