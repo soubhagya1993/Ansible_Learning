@@ -4,7 +4,7 @@ Check Python and Pip is installed
 
 Do apt update:
 
-        sudo apt upgrade -y
+        sudo apt update
 
 To Install Ansible on Ubuntu:  
 
