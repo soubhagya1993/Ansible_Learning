@@ -42,3 +42,24 @@ To ensure a package is not installed:
 Do you want a command to run on one machine at a time ?
 
     ansible all -f 1 -a "free"
+
+To create a group
+
+    ansible app -s -m group -a "name=admin state=present"
+
+To create a user
+
+    ansible app -m user -a "name=devops group=admin createhome=yes" --ask-pass -K --become
+
+To copy file from control node to app servers.
+
+    ansible app -m copy -a "src=/vagrant/test.txt dest=/tmp/test.txt"
+
+Validating Syntax
+Option 1 : Using --syntax-check option with ansible-playbook
+
+    ansible-playbook playbook.yml --syntax-check
+
+To Dry run
+
+    ansible-playbook playbook.yml --check
