@@ -38,3 +38,7 @@ To ensure a package is at the latest version:
 To ensure a package is not installed:
 
     $ ansible webservers -m ansible.builtin.yum -a "name=acme state=absent"
+
+Do you want a command to run on one machine at a time ?
+
+    ansible all -f 1 -a "free"
