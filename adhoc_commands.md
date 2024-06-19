@@ -4,15 +4,17 @@ Syntax --
 
 ping module
 
-ansible all -m ping
+    ansible all -m ping
 
-ansible all -a hostname
+Other noramal linux commands can be passed as -a (arguments)
 
-ansible all -a uptime
+    ansible all -a hostname
 
-ansible app -a free
+    ansible all -a uptime
 
-ansible app -a "yum install -y docker-engine"
+    ansible app -a free
+
+    ansible app -a "yum install -y docker-engine"
 
 
 By using a different user
