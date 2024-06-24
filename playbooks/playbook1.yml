@@ -2,10 +2,9 @@
 
 - name: user task
   hosts: localhost
-
+  become: true
   tasks:
       - name: Create Admin User
-        become: True
         user: name=admin state=present uid=5001
       
       - name: Delete user dojo
@@ -15,4 +14,4 @@
         apt: name=tree state=present
       
       - name: Install ntp
-        apt: name=ntp state=present
+        apt: name=ntp state=presentQ1

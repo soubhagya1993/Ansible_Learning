@@ -1,3 +1,5 @@
+Installation Ansible
+
 Check Python and Pip is installed
         
         python3 -m pip -v
@@ -22,3 +24,4 @@ TO check Ansible Verison:
         python version = 3.12.3 (main, Apr 10 2024, 05:33:47) [GCC 13.2.0] (/usr/bin/python3)
         jinja version = 3.1.2
         libyaml = True
+

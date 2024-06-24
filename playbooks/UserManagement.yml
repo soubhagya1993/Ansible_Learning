@@ -1,0 +1,13 @@
+---
+- name: User creation
+  hosts: localhost
+
+  tasks:
+  - name: Create User Nick
+    user:
+      name: Nick
+      comment: User added for QA
+      shell: /bin/bash
+      groups: QA,nick
+      state: absent   # To delete user , doesn't remove user data
+      remove: yes     # this will remove user as well as all user data
