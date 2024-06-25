@@ -1,0 +1,6 @@
+---
+- name: Inastall httpd and firewall chnages
+  hosts: localhost
+  roles:
+    - httpdSetup
+    - firewalldService
