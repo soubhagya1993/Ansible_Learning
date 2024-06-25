@@ -1,0 +1,19 @@
+---
+
+- name: Install Nginx
+  hosts: localhost
+  become: true
+  vars:
+    - server_port: 80
+
+  tasks:
+  - name: Install Naginx
+    apt:
+      name: nginx
+      state: present
+  
+  - name: start Nginx
+    service:
+      name: nginx
+      state: started
+  
