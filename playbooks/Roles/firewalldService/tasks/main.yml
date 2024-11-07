@@ -1,0 +1,9 @@
+---
+
+- name: Enable a service in firewalld service
+  become: true
+  firewalld:
+    service: "{{ service_name }}"
+    state: enabled
+    permanenet: true
+  notify: Reload firewall

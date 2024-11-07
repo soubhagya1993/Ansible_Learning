@@ -1,0 +1,14 @@
+---
+
+- name: Download file from internet url
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: download file
+    get_url:
+      url: https://www.python.org/downloads/release/python-3124/
+      dest: /tmp/script/
+      owner: soubha
+      # group:
+      mode: 0777

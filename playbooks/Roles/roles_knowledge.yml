@@ -1,0 +1,27 @@
+# Ansible role is a structured way of grouping together various functinalities and making it easier to reuse
+#  and share common setup tasks
+
+suppose there are 3 roles
+
+1. role1 -- installs package
+2. role2 -- restartes package
+
+then simple playbook would be
+
+---
+
+name: test
+roles:
+ - role1
+ - role2
+
+
+Use case:
+- Install apache https webserver on remote
+- place our custom HTML file to use
+- Start the service
+- Enable service in firewall
+- reload firewall
+
+
+Create Role ->  ansible-galaxy init role_name

@@ -1,0 +1,17 @@
+# User Creation
+
+---
+
+- name: Create Multiple Users
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Create user
+    user:
+      name: "{{ item }}"
+      shell: /bin/bash
+    loop:
+      - ram
+      - shyam
+      - gopal

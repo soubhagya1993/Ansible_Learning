@@ -1,0 +1,19 @@
+---
+
+- name: Enable FIrewall
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Enable a service in FIrewalldd
+    firewalldd:
+      service: nginx
+      port: 80/tcp
+      permanent: true
+      state: enabled
+  
+  - name: Reload firewalld
+    service:
+      name: firewalld
+      state: reloaded
+

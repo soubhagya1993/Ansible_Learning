@@ -63,3 +63,21 @@ Option 1 : Using --syntax-check option with ansible-playbook
 To Dry run
 
     ansible-playbook playbook.yml --check
+
+To check free space 
+
+    ansible localhost  -m command -a "df -h" 
+
+To restart service
+
+    ansible localhost -m service -a "name=nginx state=reloaded"
+
+to run a script
+
+    ansible localhost -m shell -a "/tmp/script/test.sh"
+
+check free memory
+
+    ansible localhost -m command -a "free -m"
+
+    

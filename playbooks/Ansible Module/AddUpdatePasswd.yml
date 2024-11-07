@@ -1,0 +1,11 @@
+---
+
+- name: Add and Update password
+  hosts: localhost
+
+  tasks: 
+  - name: Set Password
+    user:
+      name: Nick
+      update_password: always
+      password: "{{'abcd123' | password_hash('sha512')}}"  # cant give password directly like abcd123, it will through error as password not hashed, so it must be encrypted
