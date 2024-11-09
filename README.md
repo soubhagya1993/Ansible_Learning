@@ -4,6 +4,10 @@ Check Python and Pip is installed
         
         python3 -m pip -v
 
+if not installed, install by using below command
+
+        sudo apt install python3-pip
+
 Do apt update:
 
         sudo apt update
