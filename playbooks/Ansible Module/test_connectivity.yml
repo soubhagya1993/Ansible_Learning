@@ -1,0 +1,11 @@
+---
+- name: Test connectivity on localhos
+  hosts: localhost
+
+
+  tasks:
+  - name: test conn
+    ping:
+
+  - name: print output
+    debug: msg="All working fine"

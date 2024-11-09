@@ -6,7 +6,9 @@
   tasks:
   - name: copy files
     copy:
-      src: 
-      dest:
-      owner:
-      
+      src: /etc/temp/file.txt
+      dest: /mnt/e
+      owner: paul
+      group: paul
+      mode: 0777  # ugo=rw
+      backup: true
