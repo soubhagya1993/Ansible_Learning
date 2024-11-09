@@ -1,0 +1,15 @@
+---
+
+- name: Install Nginx
+  hosts: localhost
+  become: true            # tasks should run with sudo privilage
+  vars:
+    - server_port: 80
+    - apps: [yum,https,vim,telnet]   # nginx
+
+  tasks:
+  - name: Install Naginx
+    apt:
+      name: "{{ item }}"   # nginx
+      state: present
+    with_items: "{{ apps }}"
