@@ -4,6 +4,10 @@ Syntax --
 
     $ ansible [pattern] -m [module] -a "[module options]"
 
+to run as sudo user if become: true then we should use --ask-become-pass
+
+     ansible-playbook  --ask-become-pass  playbook.yml
+
 ping module
 
     ansible all -m ping
@@ -28,6 +32,10 @@ By using a different user
 To Copy files
 
     $ ansible localhost -m ansible.builtin.copy -a "src=/etc/hosts dest=/tmp/hosts"
+
+To Run adhoc commmand by root
+
+    $ ansible localhost -m copy -a "src=/etc/hosts dest=/tmp/hosts" -b --ask-become-pass
 
 To ensure a package is installed without updating it:
 

@@ -1,0 +1,23 @@
+---
+- name: cron setup
+  hosts: localhost
+
+  tasks:
+  - name: setup cron job
+    cron:
+      name: Run Test script
+      minute: 30
+      hour: 18
+      day: 15     # for everyday put "*"
+      month: "*"
+      weekday: "*"
+#      user: paul
+      job: /tmp/scripts/test.sh
+  
+  - name: Disable cron
+    cron:
+      name: Run Test script  # should be same name
+      job: /tmp/scripts/test.sh
+      disabled: true
+
+

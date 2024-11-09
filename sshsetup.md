@@ -7,7 +7,7 @@ steps:
 Commands:
 
     ssh-keygen
-    ssh-copy-id
+    ssh-copy-id <user@remote machine IP>
 
  ssh-keygen
 Generating public/private rsa key pair.
