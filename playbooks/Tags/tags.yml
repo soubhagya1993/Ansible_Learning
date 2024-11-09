@@ -1,0 +1,45 @@
+---
+
+- name: install and start nginx
+  hosts: webservers
+  become: true
+  vars:
+    - server_port: 80
+
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+    tags: i-nginx
+
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
+      enabled: true
+    tags: ss-nginx
+
+
+
+#############################################################################
+
+$ ansible-playbook tags.yml --list-tags
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+[WARNING]: Could not match supplied host pattern, ignoring: webservers
+
+playbook: tags.yml
+
+  play #1 (webservers): install and start nginx TAGS: []
+      TASK TAGS: [i-nginx, ss-nginx]
+
+
+To run a particulra tag:
+
+  $ ansible-playbook tags.yml -t i-nginx
+
+  Suppose you have 5 tags and you need to run 4 tags so in that case instead 
+  of mentionaing all 4 tags to run, you can mention the tag name to skip using --skip-tags
+
+  $ ansible-playbook tags.yml --skip-tags ss-nginx
