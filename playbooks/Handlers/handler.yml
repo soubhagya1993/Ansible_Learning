@@ -1,0 +1,21 @@
+---
+
+- name: Enable FIrewall
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Enable a service in FIrewalldd
+    firewalldd:
+      service: nginx
+      port: 80/tcp   # optional
+      permanent: true
+      state: enabled
+    notify:                 # triggering handlers only if there is change in this task
+      - Reload firewalld
+  
+  handlers:                 # need to be triggered , so the tasks under handler will not run unncessarily
+  - name: Reload firewalld
+    service:
+      name: firewalld
+      state: reloaded
